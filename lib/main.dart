@@ -13,7 +13,7 @@
 //     return splashScreen();
 
 
-
+ 
 //   }
 // }
 // //Anish subedi
@@ -32,6 +32,8 @@ class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      
       title: "Stonk Watch",
       home: splashScreen(),
     );
