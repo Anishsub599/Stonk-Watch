@@ -1,10 +1,11 @@
 import 'package:endproject/pages/Aboutus.dart';
 import 'package:endproject/pages/Myprofile.dart';
 import 'package:endproject/pages/Settings.dart';
-import 'package:endproject/pages/StockCalculator.dart';
+import 'package:endproject/pages/Stockcalculator.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:endproject/main.dart';
+import 'package:endproject/pages/loginpage.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_charts/sparkcharts.dart';
@@ -21,6 +22,35 @@ class homepage extends StatefulWidget {
 class _homepageState extends State<homepage> {
   @override
   Widget build(BuildContext context) {
+    void _showLogoutConfirmation(BuildContext context) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Log Out'),
+            content: Text('Are you sure you want to log out?'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(false),
+                child: Text('Cancel'),
+              ),
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(true),
+                child: Text('Log Out'),
+              ),
+            ],
+          );
+        },
+      ).then((value) {
+        if (value == true) {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => MyCustomForm()),
+          );
+        }
+      });
+    }
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "STONK WATCH",
@@ -64,7 +94,7 @@ class _homepageState extends State<homepage> {
               ),
               ListTile(
                 title: const Text('Log out'),
-                onTap: () {},
+                onTap: () => _showLogoutConfirmation(context),
               ),
             ],
           ),
@@ -102,14 +132,50 @@ class _homepageState extends State<homepage> {
             ),
           ],
         ),
-        body: Row(children: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => StockCalculator()));
-            },
-            child: Text('Stock Calculator'),
-          ),
+        body: Column( Row(children: [
+          ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => StockCalculator()));
+              },
+              icon: Icon(Icons.calculate),
+              label: Text('Stock Calculator')),
+          ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => StockCalculator()));
+              },
+              icon: Icon(Icons.watch),
+              label: Text('WatchList')),],),
+              Row(children: [
+          ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => StockCalculator()));
+              },
+              icon: Icon(Icons.alarm),
+              label: Text('Alerts')),
+          ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => StockCalculator()));
+              },
+              icon: Icon(Icons.table_chart),
+              label: Text('Floorsheet')),
+          ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => StockCalculator()));
+              },
+              icon: Icon(Icons.list),
+              label: Text('All scrips')),
+          ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => StockCalculator()));
+              },
+              icon: Icon(Icons.notes_outlined),
+              label: Text('My notes'))
         ]),
       ),
     );
