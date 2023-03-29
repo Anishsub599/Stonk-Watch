@@ -22,6 +22,7 @@ class _homepageState extends State<homepage> {
 debugShowCheckedModeBanner: false,
 title: "STONK WATCH",
 home: Scaffold(
+  
 
   drawer: Drawer(backgroundColor: Color.fromARGB(255, 126, 165, 192),
    child: ListView(
@@ -64,6 +65,8 @@ actions: [
 
 
   ),
+
+  
 bottomNavigationBar: GNav(
   backgroundColor: Color.fromARGB(255, 15, 15, 16),
   color: Color.fromARGB(255, 243, 240, 241),
