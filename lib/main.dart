@@ -2,7 +2,6 @@
 // import 'package:flutter/material.dart';
 // import 'package:endproject/pages/homepage.dart';
 
-
 // void main() => runApp(Myapp());
 
 // class Myapp extends StatelessWidget {
@@ -12,17 +11,13 @@
 //   Widget build(BuildContext context) {
 //     return splashScreen();
 
-
-
 //   }
 // }
 // //Anish subedi
 
-
 import 'package:endproject/pages/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:endproject/pages/homepage.dart';
-
 
 void main() => runApp(Myapp());
 
@@ -35,10 +30,8 @@ class Myapp extends StatelessWidget {
       title: "Stonk Watch",
       home: splashScreen(),
     );
-
-
-
   }
 }
 //Anish subedi
+//Gaurav Chataut
 
