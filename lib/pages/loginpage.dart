@@ -31,6 +31,9 @@ final _formKey = GlobalKey<FormState>();
 
     @override
     void login(){
+      // setState(() {
+      //   loading = true;
+      // }); 
       _auth.signInWithEmailAndPassword(
         email: _emailController.text,
        password: _passwordController.text.toString()).then((value) {
@@ -40,7 +43,11 @@ final _formKey = GlobalKey<FormState>();
 
        }).onError((error, stackTrace){
 
+
         utils().toastMessage(error.toString());
+        // setState(() {
+        //   loading= false;
+        // });
 
 
        });
