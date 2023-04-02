@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1045882095318",
+    "project_id": "stonk-watch-643ec",
+    "storage_bucket": "stonk-watch-643ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045882095318:android:f88e1783c3f123f0626b77",
+        "android_client_info": {
+          "package_name": "com.example.endproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045882095318-pn3r2429cd3qbdlk3bp99bst87arp0jl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4AaRWepLscqTx8v9dnuhoVKLTj0XVh30"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045882095318-pn3r2429cd3qbdlk3bp99bst87arp0jl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

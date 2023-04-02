@@ -44,6 +44,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   syncfusion_flutter_charts: ^20.4.52
+  
+  firebase_core: ^2.8.0
+  firebase_auth: ^4.3.0
+  cloud_firestore: ^4.4.5
+  firebase_storage: ^11.0.16
+  fluttertoast: ^8.2.1
     
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

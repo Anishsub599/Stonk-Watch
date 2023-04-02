@@ -54,7 +54,7 @@ class _splashScreenState extends State<splashScreen> {
   @override
   Widget build(BuildContext context) {
     Timer(Duration(seconds: 5), () {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>MyCustomForm(),));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>loginpage(),));
      });
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 15, 14, 14),
