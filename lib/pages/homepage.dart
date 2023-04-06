@@ -249,44 +249,103 @@ class _homepageState extends State<homepage> {
       title: "STONK WATCH",
       home: Scaffold(
         drawer: Drawer(
-          backgroundColor: Color.fromARGB(255, 126, 165, 192),
-          child: ListView(
-            // Important: Remove any padding from the ListView.
-            padding: EdgeInsets.zero,
+          backgroundColor: Colors.blueGrey[900],
+          child: Column(
             children: [
-              const DrawerHeader(
+              Container(
+                height: 150,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 122, 188, 210),
+                  color: Colors.blueGrey[800],
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
                 ),
-                child: Text('Profile'),
+                child: Center(
+                  child: Text(
+                    'Profile',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
+              SizedBox(height: 20),
               ListTile(
-                title: const Text('My Profile'),
+                title: Text(
+                  'My Profile',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                leading: Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ),
                 onTap: () {
-                  // Update the state of the app.
-                  // ...
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Myprofile()));
+                    MaterialPageRoute(builder: (context) => Myprofile()),
+                  );
                 },
               ),
               ListTile(
-                title: const Text('Settings'),
+                title: Text(
+                  'Settings',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                leading: Icon(
+                  Icons.settings,
+                  color: Colors.white,
+                ),
                 onTap: () {
-                  // Update the state of the app.
-                  // ...
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Settings()));
+                    MaterialPageRoute(builder: (context) => Settings()),
+                  );
                 },
               ),
               ListTile(
-                title: const Text('About Us'),
+                title: Text(
+                  'About Us',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                leading: Icon(
+                  Icons.info_outline,
+                  color: Colors.white,
+                ),
                 onTap: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => Aboutus()));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => Aboutus()),
+                  );
                 },
               ),
+              Divider(
+                color: Colors.white,
+                height: 20,
+                thickness: 2,
+                indent: 20,
+                endIndent: 20,
+              ),
               ListTile(
-                title: const Text('Log out'),
+                title: Text(
+                  'Log out',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                leading: Icon(
+                  Icons.exit_to_app,
+                  color: Colors.white,
+                ),
                 onTap: () => _showLogoutConfirmation(context),
               ),
             ],

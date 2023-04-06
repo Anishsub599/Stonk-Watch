@@ -9,11 +9,13 @@ class Aboutus extends StatelessWidget {
       appBar: AppBar(
         title: Text('About Us'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      backgroundColor: Colors.white,
+      body: Container(
+        padding: EdgeInsets.all(16),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 16),
             Text(
               'About Stonk Watch',
               style: TextStyle(
@@ -23,18 +25,35 @@ class Aboutus extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              'Stonk Watch is a personal finance management app that helps you keep track of your investments in the stock market. With features similar to a investment management app, our app is designed to be user-friendly and easy to use.',
-              style: TextStyle(fontSize: 16),
+              'Stonk Watch is a personal finance management app that helps you keep track of your investments in the stock market. With features similar to an investment management app, our app is designed to be user-friendly and easy to use.',
+              style: TextStyle(fontSize: 16, color: Colors.grey[700]),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 24),
             Text(
               'We use the Alpha Vintage API key to get live data for various stocks. This allows us to provide up-to-date information to our users at all times.',
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 16, color: Colors.grey[700]),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 24),
             Text(
               'Our app is still under development, and we are constantly adding new features and improving the user experience. We appreciate any feedback you have, so please feel free to contact us at [email protected]',
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+            ),
+            SizedBox(height: 24),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'Contact Us',
+                  style: TextStyle(fontSize: 18),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue,
+                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
