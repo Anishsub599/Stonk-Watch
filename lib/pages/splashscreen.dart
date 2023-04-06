@@ -25,6 +25,8 @@
 //   }
 // }
 
+import 'dart:math';
+
 import 'package:endproject/pages/homepage.dart';
 import 'package:endproject/pages/loginpage.dart';
 import 'package:flutter/material.dart';
@@ -43,17 +45,12 @@ class _splashScreenState extends State<splashScreen> {
   @override
   Widget build(BuildContext context) {
     Timer(Duration(seconds: 5), () {
-<<<<<<< HEAD
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>loginpage(),));
-     });
-=======
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => homepage(),
+            builder: (context) => loginpage(),
           ));
     });
->>>>>>> refs/remotes/origin/master
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 15, 14, 14),
       body: SizedBox(

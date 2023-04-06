@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class StockCalculator extends StatefulWidget {
   const StockCalculator({super.key});
 
