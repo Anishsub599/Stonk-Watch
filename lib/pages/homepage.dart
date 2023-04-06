@@ -56,8 +56,7 @@
 //       debugShowCheckedModeBanner: false,
 //       title: "STONK WATCH",
 //       home: Scaffold(
-      
-        
+
 //         drawer: Drawer(
 //           backgroundColor: Color.fromARGB(255, 126, 165, 192),
 //           child: ListView(
@@ -135,10 +134,10 @@
 //             ),
 //           ],
 //         ),
-//         body: 
-        
+//         body:
+
 //         Column(
-          
+
 //            Row(children: [
 //           ElevatedButton.icon(
 //               onPressed: () {
@@ -155,10 +154,7 @@
 //               icon: Icon(Icons.watch),
 //               label: Text('WatchList')),
 //               ],),
-        
-        
 
-              
 //               Row(children: [
 //           ElevatedButton.icon(
 //               onPressed: () {
@@ -209,6 +205,8 @@ import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 import 'dart:async';
 import 'dart:math' as math;
 
+import 'graph.dart';
+
 class homepage extends StatefulWidget {
   const homepage({super.key});
 
@@ -242,7 +240,7 @@ class _homepageState extends State<homepage> {
         if (value == true) {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) =>loginpage()),
+            MaterialPageRoute(builder: (context) => loginpage()),
           );
         }
       });
@@ -330,6 +328,14 @@ class _homepageState extends State<homepage> {
           ],
         ),
         body: Column(children: [
+          ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) =>
+                        CandleStick(title: 'My Candlestick Chart')));
+              },
+              icon: Icon(Icons.auto_graph),
+              label: Text('StockGraph')),
           ElevatedButton.icon(
               onPressed: () {
                 Navigator.of(context).push(

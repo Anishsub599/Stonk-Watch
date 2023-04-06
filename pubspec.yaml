@@ -43,7 +43,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  syncfusion_flutter_charts: ^20.4.52
+  syncfusion_flutter_charts: ^21.1.38
   
   firebase_core: ^2.8.0
   firebase_auth: ^4.3.0
