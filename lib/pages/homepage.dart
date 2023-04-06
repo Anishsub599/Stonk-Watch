@@ -56,8 +56,7 @@
 //       debugShowCheckedModeBanner: false,
 //       title: "STONK WATCH",
 //       home: Scaffold(
-      
-        
+
 //         drawer: Drawer(
 //           backgroundColor: Color.fromARGB(255, 126, 165, 192),
 //           child: ListView(
@@ -135,10 +134,10 @@
 //             ),
 //           ],
 //         ),
-//         body: 
-        
+//         body:
+
 //         Column(
-          
+
 //            Row(children: [
 //           ElevatedButton.icon(
 //               onPressed: () {
@@ -155,10 +154,7 @@
 //               icon: Icon(Icons.watch),
 //               label: Text('WatchList')),
 //               ],),
-        
-        
 
-              
 //               Row(children: [
 //           ElevatedButton.icon(
 //               onPressed: () {
@@ -242,7 +238,7 @@ class _homepageState extends State<homepage> {
         if (value == true) {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) =>loginpage()),
+            MaterialPageRoute(builder: (context) => loginpage()),
           );
         }
       });
@@ -329,50 +325,114 @@ class _homepageState extends State<homepage> {
             ),
           ],
         ),
-        body: Column(children: [
-          ElevatedButton.icon(
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => StockCalculator()));
-              },
-              icon: Icon(Icons.calculate),
-              label: Text('Stock Calculator')),
-          ElevatedButton.icon(
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => StockCalculator()));
-              },
-              icon: Icon(Icons.watch),
-              label: Text('WatchList')),
-          ElevatedButton.icon(
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => StockCalculator()));
-              },
-              icon: Icon(Icons.alarm),
-              label: Text('Alerts')),
-          ElevatedButton.icon(
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => StockCalculator()));
-              },
-              icon: Icon(Icons.table_chart),
-              label: Text('Floorsheet')),
-          ElevatedButton.icon(
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => StockCalculator()));
-              },
-              icon: Icon(Icons.list),
-              label: Text('All scrips')),
-          ElevatedButton.icon(
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => StockCalculator()));
-              },
-              icon: Icon(Icons.notes_outlined),
-              label: Text('My notes'))
-        ]),
+        body: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: ListView(
+            children: [
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => StockCalculator()));
+                },
+                icon: Icon(Icons.calculate),
+                label: Text('Stock Calculator'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue, // background color
+                  onPrimary: Colors.white, // text color
+                  padding: EdgeInsets.all(12.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => StockCalculator()));
+                },
+                icon: Icon(Icons.watch),
+                label: Text('WatchList'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue,
+                  onPrimary: Colors.white,
+                  padding: EdgeInsets.all(12.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => StockCalculator()));
+                },
+                icon: Icon(Icons.alarm),
+                label: Text('Alerts'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue,
+                  onPrimary: Colors.white,
+                  padding: EdgeInsets.all(12.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => StockCalculator()));
+                },
+                icon: Icon(Icons.table_chart),
+                label: Text('Floorsheet'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue,
+                  onPrimary: Colors.white,
+                  padding: EdgeInsets.all(12.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => StockCalculator()));
+                },
+                icon: Icon(Icons.list),
+                label: Text('All scrips'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue,
+                  onPrimary: Colors.white,
+                  padding: EdgeInsets.all(12.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => StockCalculator()));
+                },
+                icon: Icon(Icons.notes_outlined),
+                label: Text('My notes'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue,
+                  onPrimary: Colors.white,
+                  padding: EdgeInsets.all(12.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
