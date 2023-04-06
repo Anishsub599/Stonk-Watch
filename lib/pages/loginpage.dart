@@ -181,10 +181,7 @@ final _formKey = GlobalKey<FormState>();
 
        }).onError((error, stackTrace){
 
-        setState(() {
-          _emailController.text = "";
-          _passwordController.text="";
-        });
+        debugPrint(error.toString());
 
         utils().toastMessage(error.toString());
         // setState(() {
@@ -284,16 +281,20 @@ Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>signup
     SizedBox(
       height: 15,
     ),
+    
  
 Container(
               width: double.infinity,
+              
                child: RawMaterialButton(
+                
               fillColor: Color.fromARGB(255, 69, 107, 232), 
               elevation: 0.0,
 
               padding: EdgeInsets.symmetric(vertical: 20),
               shape: RoundedRectangleBorder (
               borderRadius: BorderRadius.circular (12.0)),
+              
               onPressed: (){
                 if(_formKey.currentState!.validate()){
 
