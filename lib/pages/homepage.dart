@@ -205,6 +205,8 @@ import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 import 'dart:async';
 import 'dart:math' as math;
 
+import 'graph.dart';
+
 class homepage extends StatefulWidget {
   const homepage({super.key});
 
@@ -381,7 +383,6 @@ class _homepageState extends State<homepage> {
             GButton(
               icon: Icons.settings,
               text: 'setting',
-              
             ),
           ],
         ),
@@ -389,6 +390,24 @@ class _homepageState extends State<homepage> {
           padding: EdgeInsets.all(16.0),
           child: ListView(
             children: [
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) =>
+                          CandleStick(title: 'My Candlestick Chart')));
+                },
+                icon: Icon(Icons.auto_graph),
+                label: Text('StockChart'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue,
+                  onPrimary: Colors.white,
+                  padding: EdgeInsets.all(12.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0),
               ElevatedButton.icon(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
