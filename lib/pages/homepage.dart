@@ -211,6 +211,20 @@ class homepage extends StatefulWidget {
   @override
   State<homepage> createState() => _homepageState();
 }
+bool _iconBool = false; 
+IconData _iconLight = Icons.wb_sunny;
+IconData _iconDark = Icons.nights_stay;
+ThemeData _LightTheme =ThemeData(
+primarySwatch: Colors.amber,
+brightness: Brightness.light,
+  
+);
+ThemeData _darkTheme =ThemeData(
+primarySwatch: Colors.red,
+brightness: Brightness.dark,
+  
+);
+
 
 class _homepageState extends State<homepage> {
   @override
@@ -245,6 +259,7 @@ class _homepageState extends State<homepage> {
     }
 
     return MaterialApp(
+       theme: _iconBool ? _darkTheme: _LightTheme,
       debugShowCheckedModeBanner: false,
       title: "STONK WATCH",
       home: Scaffold(
@@ -355,7 +370,18 @@ class _homepageState extends State<homepage> {
           backgroundColor: Color.fromARGB(255, 61, 201, 161),
           title: Text('STONKWATCH'),
           actions: [
-            Icon(Icons.person),
+            
+            
+          IconButton(
+            onPressed: (){
+              setState(() {
+                _iconBool = !_iconBool;
+              });
+
+
+          },
+          icon: Icon(_iconBool ? _iconDark:_iconLight),
+          ),
           ],
         ),
         bottomNavigationBar: GNav(

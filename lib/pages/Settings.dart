@@ -13,13 +13,13 @@ class Settings extends StatelessWidget {
       body: Column(children:
       
     [
-       ElevatedButton.icon(
-              onPressed: () {
-               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>theme(),));
+      //  ElevatedButton.icon(
+      //         onPressed: () {
+      //          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>theme(),));
 
-              },
-              icon: Icon(Icons.mode),
-              label: Text('THEME')),
+      //         },
+      //         icon: Icon(Icons.mode),
+      //         label: Text('THEME')),
 
     ]),
     );
