@@ -326,6 +326,7 @@ class _homepageState extends State<homepage> {
             GButton(
               icon: Icons.settings,
               text: 'setting',
+              
             ),
           ],
         ),
