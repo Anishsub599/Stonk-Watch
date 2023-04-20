@@ -10,18 +10,15 @@ class Settings extends StatelessWidget {
       appBar: AppBar(
         title: Text('Settings'),
       ),
-      body: Column(children:
-      
-    [
-      //  ElevatedButton.icon(
-      //         onPressed: () {
-      //          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>theme(),));
+      body: Column(children: [
+        //  ElevatedButton.icon(
+        //         onPressed: () {
+        //          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>theme(),));
 
-      //         },
-      //         icon: Icon(Icons.mode),
-      //         label: Text('THEME')),
-
-    ]),
+        //         },
+        //         icon: Icon(Icons.mode),
+        //         label: Text('THEME')),
+      ]),
     );
   }
 }

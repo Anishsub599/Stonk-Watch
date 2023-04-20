@@ -19,11 +19,12 @@
 import 'package:endproject/pages/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:endproject/pages/homepage.dart';
-import 'package:endproject/main.dart';
+// import 'package:endproject/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth_platform_interface/firebase_auth_platform_interface.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:ui';
 
 void main() {
 WidgetsFlutterBinding.ensureInitialized();
