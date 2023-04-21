@@ -195,6 +195,7 @@ import 'package:endproject/pages/Aboutus.dart';
 import 'package:endproject/pages/Myprofile.dart';
 import 'package:endproject/pages/Settings.dart';
 import 'package:endproject/pages/Stockcalculator.dart';
+import 'package:endproject/pages/watchlist.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:endproject/main.dart';
@@ -448,7 +449,7 @@ class _homepageState extends State<homepage> {
               ElevatedButton.icon(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => StockCalculator()));
+                      builder: (context) => WatchlistScreen()));
                 },
                 icon: Icon(Icons.watch),
                 label: Text('WatchList'),
