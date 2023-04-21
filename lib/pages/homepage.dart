@@ -195,6 +195,7 @@ import 'package:endproject/pages/Aboutus.dart';
 import 'package:endproject/pages/Myprofile.dart';
 import 'package:endproject/pages/Settings.dart';
 import 'package:endproject/pages/Stockcalculator.dart';
+import 'package:endproject/pages/mynote.dart';
 import 'package:endproject/pages/watchlist.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
@@ -516,8 +517,8 @@ class _homepageState extends State<homepage> {
               SizedBox(height: 16.0),
               ElevatedButton.icon(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => StockCalculator()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => NotePage()));
                 },
                 icon: Icon(Icons.notes_outlined),
                 label: Text('My notes'),
