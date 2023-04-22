@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'Settings.dart';
 
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
@@ -8,7 +8,9 @@ class SocialPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 80, 237, 172),
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(159, 68, 213, 32),
         title: Text('Social'),
       ),
       body: Padding(
@@ -53,28 +55,28 @@ class SocialPage extends StatelessWidget {
               leading: Icon(Icons.facebook),
               title: Text('Facebook'),
               subtitle: Text('facebook.com/example'),
-              onTap: () async {
-                if (await canLaunch(
-                    "https://www.facebook.com/anish.subedi.372")) {
-                  await launch("https://www.facebook.com/anish.subedi.372");
-                }
+              onTap: () {
+                final Uri _url =
+                    Uri.parse('https://www.facebook.com/anish.subedi.372');
               },
             ),
             ListTile(
               leading: Icon(Icons.link),
               title: Text('Twitter'),
               subtitle: Text('twitter.com/example'),
-              onTap: () async {
-                if (await canLaunch("https://twitter.com/OSCARREBEL3")) {
-                  await launch("https://twitter.com/OSCARREBEL3");
-                }
+              onTap: () {
+                final Uri _url = Uri.parse('https://twitter.com/OSCARREBEL3');
+                //  https://twitter.com/OSCARREBEL3
               },
             ),
             ListTile(
               leading: Icon(Icons.link),
               title: Text('Instagram'),
               subtitle: Text('instagram.com/example'),
-              onTap: () {},
+              onTap: () {
+                final Uri _url =
+                    Uri.parse('https://www.instagram.com/0scar.rebel/');
+              },
             ),
           ],
         ),
