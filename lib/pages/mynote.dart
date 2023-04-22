@@ -1,4 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:endproject/main.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+FirebaseAuth _auth = FirebaseAuth.instance;
+final FirebaseFirestore firestore = FirebaseFirestore.instance;
+Future<void> saveNote(String title, String content) async {
+  try {
+    await firestore.collection('notes').add({
+      'content': content,
+    });
+  } catch (e) {
+    print(e);
+  }
+}
 
 class NotePage extends StatefulWidget {
   @override
@@ -36,7 +52,10 @@ class _NotePageState extends State<NotePage> {
             ElevatedButton(
               onPressed: () {
                 // to save data after database connection
-                saveNoteToDatabase(note);
+                void onSaveNotePressed(String title, String content) {
+                  saveNote(title, content);
+                }
+
                 // Show a snackbar or toast message to confirm the note is saved
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Note saved')),

@@ -155,6 +155,9 @@
 // }
 
 import 'package:endproject/pages/changepass.dart';
+import 'package:endproject/pages/privacy.dart';
+import 'package:endproject/pages/social.dart';
+import 'package:endproject/pages/sound.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 
@@ -232,7 +235,7 @@ class SettingsPage extends StatelessWidget {
                   textStyle: const TextStyle(fontSize: 20),
                 ),
                 onPressed: () {},
-                child: const Text('Content setting'),
+                child: const Text('Sound setting'),
               ),
               margin: EdgeInsets.only(top: 5, bottom: 5),
               padding:
@@ -251,7 +254,13 @@ class SettingsPage extends StatelessWidget {
                   padding: const EdgeInsets.all(16.0),
                   textStyle: const TextStyle(fontSize: 20),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SocialPage(),
+                      ));
+                },
                 child: const Text('Social'),
               ),
               margin: EdgeInsets.only(top: 5, bottom: 5),
@@ -271,7 +280,13 @@ class SettingsPage extends StatelessWidget {
                   padding: const EdgeInsets.all(16.0),
                   textStyle: const TextStyle(fontSize: 20),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PrivacySecurityPage(),
+                      ));
+                },
                 child: const Text('Privacy and security'),
               ),
               margin: EdgeInsets.only(top: 5, bottom: 5),
