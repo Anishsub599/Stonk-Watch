@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:endproject/main.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -15,6 +17,7 @@ class CandleStick extends StatefulWidget {
 class _CandleStickState extends State<CandleStick> {
   late List<ChartSampleData> _chartData;
   late TrackballBehavior _trackballBehavior;
+  String _chartType = 'Candles';
 
   @override
   void initState() {
@@ -34,38 +37,166 @@ class _CandleStickState extends State<CandleStick> {
         ),
         body: Column(
           children: [
-            Expanded(
-              child: SfCartesianChart(
-                title: ChartTitle(text: 'AAPL - 2016'),
-                legend: Legend(
-                  isVisible: true,
-                  alignment: ChartAlignment.center,
-                  position: LegendPosition.bottom,
-                ),
-                trackballBehavior: _trackballBehavior,
-                series: <CandleSeries>[
-                  CandleSeries<ChartSampleData, DateTime>(
-                    dataSource: _chartData,
-                    name: 'AAPL',
-                    xValueMapper: (ChartSampleData sales, _) => sales.x,
-                    lowValueMapper: (ChartSampleData sales, _) => sales.low,
-                    highValueMapper: (ChartSampleData sales, _) => sales.high,
-                    openValueMapper: (ChartSampleData sales, _) => sales.open,
-                    closeValueMapper: (ChartSampleData sales, _) => sales.close,
+            SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      _chartType = 'Line';
+                    });
+                  },
+                  icon: Icon(Icons.show_chart),
+                  label: Text('Line'),
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.grey[200]!),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.black),
                   ),
-                ],
-                primaryXAxis: DateTimeAxis(
-                  dateFormat: DateFormat.MMM(),
-                  majorGridLines: MajorGridLines(width: 0),
                 ),
-                primaryYAxis: NumericAxis(
-                  minimum: 70,
-                  maximum: 130,
-                  interval: 10,
-                  numberFormat: NumberFormat.simpleCurrency(decimalDigits: 0),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      _chartType = 'Candles';
+                    });
+                  },
+                  icon: Icon(Icons.analytics),
+                  label: Text('Candles'),
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.grey[200]!),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.black),
+                  ),
                 ),
-              ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      _chartType = 'OHLC';
+                    });
+                  },
+                  icon: Icon(Icons.trending_up),
+                  label: Text('OHLC'),
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.grey[200]!),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.black),
+                  ),
+                ),
+              ],
             ),
+            SizedBox(height: 16),
+            Expanded(
+              child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: _chartType == 'Candles'
+                      ? SfCartesianChart(
+                          title: ChartTitle(text: 'AAPL - 2016'),
+                          legend: Legend(
+                            isVisible: true,
+                            alignment: ChartAlignment.center,
+                            position: LegendPosition.bottom,
+                          ),
+                          trackballBehavior: _trackballBehavior,
+                          series: <CandleSeries>[
+                            CandleSeries<ChartSampleData, DateTime>(
+                              dataSource: _chartData,
+                              name: 'AAPL',
+                              xValueMapper: (ChartSampleData sales, _) =>
+                                  sales.x,
+                              lowValueMapper: (ChartSampleData sales, _) =>
+                                  sales.low,
+                              highValueMapper: (ChartSampleData sales, _) =>
+                                  sales.high,
+                              openValueMapper: (ChartSampleData sales, _) =>
+                                  sales.open,
+                              closeValueMapper: (ChartSampleData sales, _) =>
+                                  sales.close,
+                            ),
+                          ],
+                          primaryXAxis: DateTimeAxis(
+                            dateFormat: DateFormat.MMM(),
+                            majorGridLines: MajorGridLines(width: 0),
+                          ),
+                          primaryYAxis: NumericAxis(
+                            minimum: 70,
+                            maximum: 130,
+                            interval: 10,
+                            numberFormat:
+                                NumberFormat.simpleCurrency(decimalDigits: 0),
+                          ),
+                        )
+                      : _chartType == 'OHLC'
+                          ? SfCartesianChart(
+                              title: ChartTitle(text: 'AAPL - 2016'),
+                              legend: Legend(
+                                isVisible: true,
+                                alignment: ChartAlignment.center,
+                                position: LegendPosition.bottom,
+                              ),
+                              trackballBehavior: _trackballBehavior,
+                              series: <HiloOpenCloseSeries>[
+                                HiloOpenCloseSeries<ChartSampleData, DateTime>(
+                                  dataSource: _chartData,
+                                  name: 'AAPL',
+                                  xValueMapper: (ChartSampleData sales, _) =>
+                                      sales.x,
+                                  lowValueMapper: (ChartSampleData sales, _) =>
+                                      sales.low,
+                                  highValueMapper: (ChartSampleData sales, _) =>
+                                      sales.high,
+                                  openValueMapper: (ChartSampleData sales, _) =>
+                                      sales.open,
+                                  closeValueMapper:
+                                      (ChartSampleData sales, _) => sales.close,
+                                ),
+                              ],
+                              primaryXAxis: DateTimeAxis(
+                                dateFormat: DateFormat.MMM(),
+                                majorGridLines: MajorGridLines(width: 0),
+                              ),
+                              primaryYAxis: NumericAxis(
+                                minimum: 70,
+                                maximum: 130,
+                                interval: 10,
+                                numberFormat: NumberFormat.simpleCurrency(
+                                    decimalDigits: 0),
+                              ),
+                            )
+                          : SfCartesianChart(
+                              title: ChartTitle(text: 'AAPL - 2016'),
+                              legend: Legend(
+                                isVisible: true,
+                                alignment: ChartAlignment.center,
+                                position: LegendPosition.bottom,
+                              ),
+                              trackballBehavior: _trackballBehavior,
+                              series: <ChartSeries>[
+                                LineSeries<ChartSampleData, DateTime>(
+                                  dataSource: _chartData,
+                                  name: 'AAPL',
+                                  xValueMapper: (ChartSampleData sales, _) =>
+                                      sales.x,
+                                  yValueMapper: (ChartSampleData sales, _) =>
+                                      sales.close,
+                                ),
+                              ],
+                              primaryXAxis: DateTimeAxis(
+                                dateFormat: DateFormat.MMM(),
+                                majorGridLines: MajorGridLines(width: 0),
+                              ),
+                              primaryYAxis: NumericAxis(
+                                minimum: 70,
+                                maximum: 130,
+                                interval: 10,
+                                numberFormat: NumberFormat.simpleCurrency(
+                                    decimalDigits: 0),
+                              ),
+                            )),
+            )
           ],
         ),
       ),
