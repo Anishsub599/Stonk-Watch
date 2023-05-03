@@ -234,7 +234,13 @@ class SettingsPage extends StatelessWidget {
                   padding: const EdgeInsets.all(16.0),
                   textStyle: const TextStyle(fontSize: 20),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SoundSettingsPage(),
+                      ));
+                },
                 child: const Text('Sound setting'),
               ),
               margin: EdgeInsets.only(top: 5, bottom: 5),

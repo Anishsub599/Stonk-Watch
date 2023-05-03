@@ -304,7 +304,7 @@ class _homepageState extends State<homepage> {
                 ),
                 onTap: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => Myprofile()),
+                    MaterialPageRoute(builder: (context) => myprofile()),
                   );
                 },
               ),
