@@ -15,7 +15,6 @@
 // }
 // //Anish subedi
 
- 
 import 'package:endproject/pages/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:endproject/pages/homepage.dart';
@@ -27,13 +26,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:ui';
 
 void main() {
-WidgetsFlutterBinding.ensureInitialized();
-Firebase.initializeApp();
-
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
 
   runApp(Myapp());
 }
-
 
 class Myapp extends StatelessWidget {
   const Myapp({super.key});
