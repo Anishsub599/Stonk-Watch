@@ -29,6 +29,7 @@ import 'dart:math';
 
 import 'package:endproject/pages/homepage.dart';
 import 'package:endproject/pages/loginpage.dart';
+import 'package:endproject/pages/startingpage.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 import 'dart:async';
@@ -48,7 +49,7 @@ class _splashScreenState extends State<splashScreen> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => loginpage(),
+            builder: (context) => LandingPage(),
           ));
     });
     return Scaffold(
