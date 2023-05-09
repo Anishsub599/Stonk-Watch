@@ -192,6 +192,7 @@
 // }
 
 import 'package:endproject/pages/Aboutus.dart';
+import 'package:endproject/pages/AllScrip.dart';
 import 'package:endproject/pages/Myprofile.dart';
 import 'package:endproject/pages/Settings.dart';
 import 'package:endproject/pages/Stockcalculator.dart';
@@ -501,7 +502,9 @@ class _homepageState extends State<homepage> {
               ElevatedButton.icon(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => StockCalculator()));
+                      builder: (context) => AllScrip(
+                            title: 'All Scrip',
+                          )));
                 },
                 icon: Icon(Icons.list),
                 label: Text('All scrips'),
