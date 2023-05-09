@@ -1,7 +1,7 @@
+
+
 import 'package:endproject/pages/Aboutus.dart';
-import 'package:endproject/pages/AllScrips.dart';
 import 'package:endproject/pages/Myprofile.dart';
-import 'package:endproject/pages/STOCKHistory.dart';
 import 'package:endproject/pages/Settings.dart';
 import 'package:endproject/pages/Stockcalculator.dart';
 import 'package:endproject/pages/mynote.dart';
@@ -309,28 +309,11 @@ class _homepageState extends State<homepage> {
               SizedBox(height: 16.0),
               ElevatedButton.icon(
                 onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => AllScrips()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => StockCalculator()));
                 },
                 icon: Icon(Icons.list),
-                label: Text('All Scrips'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
-                  onPrimary: Colors.white,
-                  padding: EdgeInsets.all(12.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-              ),
-              SizedBox(height: 16.0),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => STOCKHistory()));
-                },
-                icon: Icon(Icons.history),
-                label: Text('STOCK History'),
+                label: Text('All scrips'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.blue,
                   onPrimary: Colors.white,
