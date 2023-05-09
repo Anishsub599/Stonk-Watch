@@ -12,7 +12,29 @@ class STOCKHistoryState extends State<STOCKHistory> {
   Map<String, dynamic>? stockData;
   String selectedStock = 'AAPL'; // Default selected stock
 
-  final List<String> stockList = ['AAPL', 'TSLA', 'IBM', 'MSFT', 'AMZN'];
+  final List<String> stockList = [
+    'AAPL',
+    'TSLA',
+    'IBM',
+    'MSFT',
+    'AMZN',
+    'NVDA',
+    'GOOGL',
+    'FB',
+    'JPM',
+    'JNJ',
+    'V',
+    'PG',
+    'DIS',
+    'BAC',
+    'HD',
+    'VZ',
+    'CSCO',
+    'WMT',
+    'UNH',
+    'XOM',
+    'PFE',
+  ];
 
   @override
   void initState() {

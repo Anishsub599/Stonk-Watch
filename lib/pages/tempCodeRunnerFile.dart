@@ -1,5 +1,3 @@
-
-
 import 'package:endproject/pages/Aboutus.dart';
 import 'package:endproject/pages/Myprofile.dart';
 import 'package:endproject/pages/Settings.dart';
@@ -149,7 +147,7 @@ class _homepageState extends State<homepage> {
                 ),
                 onTap: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => Aboutus()),
+                    MaterialPageRoute(builder: (context) => AboutUs()),
                   );
                 },
               ),

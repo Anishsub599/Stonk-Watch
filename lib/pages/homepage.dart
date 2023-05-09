@@ -1,9 +1,5 @@
 import 'package:endproject/pages/Aboutus.dart';
-<<<<<<< HEAD
-import 'package:endproject/pages/AllScrips.dart';
-=======
 import 'package:endproject/pages/AllScrip.dart';
->>>>>>> 67c7c01e48983e94a78c753b43dc7cdc6690d6c5
 import 'package:endproject/pages/Myprofile.dart';
 import 'package:endproject/pages/STOCKHistory.dart';
 import 'package:endproject/pages/Settings.dart';
@@ -313,15 +309,10 @@ class _homepageState extends State<homepage> {
               SizedBox(height: 16.0),
               ElevatedButton.icon(
                 onPressed: () {
-<<<<<<< HEAD
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => AllScrips()));
-=======
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => AllScrip(
                             title: 'All Scrip',
                           )));
->>>>>>> 67c7c01e48983e94a78c753b43dc7cdc6690d6c5
                 },
                 icon: Icon(Icons.list),
                 label: Text('All Scrips'),

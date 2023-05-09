@@ -5,6 +5,7 @@ import 'package:endproject/main.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:intl/intl.dart';
+import 'package:dropdown_search/dropdown_search.dart';
 
 class CandleStick extends StatefulWidget {
   const CandleStick({Key? key, required this.title}) : super(key: key);
@@ -19,8 +20,30 @@ class _CandleStickState extends State<CandleStick> {
   late List<ChartSampleData> _chartData;
   late TrackballBehavior _trackballBehavior;
   String _chartType = 'Candles';
-  List<String> _stocks = ['AAPL', 'TSLA', 'IBM', 'MSFT', 'AMZN'];
-  int _selectedStockIndex = 0;
+  List<String> _stocks = [
+    'AAPL',
+    'TSLA',
+    'IBM',
+    'MSFT',
+    'AMZN',
+    'NVDA',
+    'GOOGL',
+    'FB',
+    'JPM',
+    'JNJ',
+    'V',
+    'PG',
+    'DIS',
+    'BAC',
+    'HD',
+    'VZ',
+    'CSCO',
+    'WMT',
+    'UNH',
+    'XOM',
+    'PFE',
+  ];
+  String _selectedStock = 'AAPL';
 
   @override
   void initState() {
@@ -33,7 +56,7 @@ class _CandleStickState extends State<CandleStick> {
 
   Future<void> _fetchChartData() async {
     final apiKey = 'UP0DLOD0OWKTUT8D';
-    final symbol = _stocks[_selectedStockIndex];
+    final symbol = _selectedStock;
     final apiUrl =
         'https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=$symbol&apikey=$apiKey';
 
@@ -70,9 +93,9 @@ class _CandleStickState extends State<CandleStick> {
     }
   }
 
-  void _changeStock(int index) {
+  void _changeStock(String selectedStock) {
     setState(() {
-      _selectedStockIndex = index;
+      _selectedStock = selectedStock;
     });
     _fetchChartData();
   }
@@ -126,19 +149,24 @@ class _CandleStickState extends State<CandleStick> {
             SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: _stocks.map((stock) {
-                int index = _stocks.indexOf(stock);
-                return Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
-                  child: ChoiceChip(
-                    label: Text(stock),
-                    selected: _selectedStockIndex == index,
-                    onSelected: (selected) {
-                      _changeStock(index);
-                    },
-                  ),
-                );
-              }).toList(),
+              children: [
+                Text('Select Stock:'),
+                SizedBox(width: 16),
+                DropdownButton<String>(
+                  value: _selectedStock,
+                  onChanged: (String? newValue) {
+                    if (newValue != null) {
+                      _changeStock(newValue);
+                    }
+                  },
+                  items: _stocks.map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+              ],
             ),
             SizedBox(height: 16),
             Expanded(
