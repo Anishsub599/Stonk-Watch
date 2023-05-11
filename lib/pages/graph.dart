@@ -18,6 +18,7 @@ class CandleStick extends StatefulWidget {
 
 class _CandleStickState extends State<CandleStick> {
   late List<ChartSampleData> _chartData;
+  late ZoomPanBehavior _zoomPanBehavior;
   late TrackballBehavior _trackballBehavior;
   String _chartType = 'Candles';
   List<String> _stocks = [
@@ -51,6 +52,7 @@ class _CandleStickState extends State<CandleStick> {
     _trackballBehavior = TrackballBehavior(
         enable: true, activationMode: ActivationMode.singleTap);
     _fetchChartData();
+    _zoomPanBehavior = ZoomPanBehavior(enablePinching: true);
     super.initState();
   }
 
@@ -144,6 +146,21 @@ class _CandleStickState extends State<CandleStick> {
                         MaterialStateProperty.all<Color>(Colors.black),
                   ),
                 ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      _chartType = 'HILO';
+                    });
+                  },
+                  icon: Icon(Icons.trending_up),
+                  label: Text('HILO'),
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.grey[200]!),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.black),
+                  ),
+                ),
               ],
             ),
             SizedBox(height: 16),
@@ -172,6 +189,7 @@ class _CandleStickState extends State<CandleStick> {
             Expanded(
               child: SfCartesianChart(
                 trackballBehavior: _trackballBehavior,
+                zoomPanBehavior: _zoomPanBehavior,
                 series: _getChartSeries(),
                 primaryXAxis: DateTimeAxis(),
                 primaryYAxis: NumericAxis(),
@@ -192,9 +210,21 @@ class _CandleStickState extends State<CandleStick> {
           yValueMapper: (ChartSampleData data, _) => data.close,
         ),
       ];
-    } else {
+    }
+    if (_chartType == 'Line') {
       return <ChartSeries<ChartSampleData, DateTime>>[
         CandleSeries<ChartSampleData, DateTime>(
+          dataSource: _chartData,
+          xValueMapper: (ChartSampleData data, _) => data.x,
+          lowValueMapper: (ChartSampleData data, _) => data.low,
+          highValueMapper: (ChartSampleData data, _) => data.high,
+          openValueMapper: (ChartSampleData data, _) => data.open,
+          closeValueMapper: (ChartSampleData data, _) => data.close,
+        ),
+      ];
+    } else {
+      return <ChartSeries<ChartSampleData, DateTime>>[
+        HiloOpenCloseSeries<ChartSampleData, DateTime>(
           dataSource: _chartData,
           xValueMapper: (ChartSampleData data, _) => data.x,
           lowValueMapper: (ChartSampleData data, _) => data.low,
