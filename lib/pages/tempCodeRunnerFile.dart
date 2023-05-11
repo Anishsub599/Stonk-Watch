@@ -1,7 +1,5 @@
 import 'package:endproject/pages/Aboutus.dart';
-import 'package:endproject/pages/AllScrip.dart';
 import 'package:endproject/pages/Myprofile.dart';
-import 'package:endproject/pages/STOCKHistory.dart';
 import 'package:endproject/pages/Settings.dart';
 import 'package:endproject/pages/Stockcalculator.dart';
 import 'package:endproject/pages/mynote.dart';
@@ -310,29 +308,10 @@ class _homepageState extends State<homepage> {
               ElevatedButton.icon(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => AllScrip(
-                            title: 'All Scrip',
-                          )));
+                      builder: (context) => StockCalculator()));
                 },
                 icon: Icon(Icons.list),
-                label: Text('All Scrips'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
-                  onPrimary: Colors.white,
-                  padding: EdgeInsets.all(12.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-              ),
-              SizedBox(height: 16.0),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => STOCKHistory()));
-                },
-                icon: Icon(Icons.history),
-                label: Text('STOCK History'),
+                label: Text('All scrips'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.blue,
                   onPrimary: Colors.white,
@@ -366,129 +345,3 @@ class _homepageState extends State<homepage> {
     );
   }
 }
-// import 'package:endproject/pages/Aboutus.dart';
-// import 'package:endproject/pages/Myprofile.dart';
-// import 'package:endproject/pages/Settings.dart';
-// import 'package:endproject/pages/Stockcalculator.dart';
-// import 'package:endproject/pages/mynote.dart';
-// import 'package:endproject/pages/watchlist.dart';
-// import 'package:flutter/material.dart';
-// import 'package:cupertino_icons/cupertino_icons.dart';
-// import 'package:endproject/main.dart';
-// import 'package:endproject/pages/loginpage.dart';
-// import 'package:google_nav_bar/google_nav_bar.dart';
-
-// class Homepage extends StatefulWidget {
-//   const Homepage({Key? key}) : super(key: key);
-
-//   @override
-//   State<Homepage> createState() => _HomepageState();
-// }
-
-// class _HomepageState extends State<Homepage> {
-//   bool _iconBool = false;
-//   IconData _iconLight = Icons.wb_sunny;
-//   IconData _iconDark = Icons.nights_stay;
-//   ThemeData _lightTheme = ThemeData(
-//     primarySwatch: Colors.amber,
-//     brightness: Brightness.light,
-//   );
-//   ThemeData _darkTheme = ThemeData(
-//     primarySwatch: Colors.red,
-//     brightness: Brightness.dark,
-//   );
-
-//   @override
-//   Widget build(BuildContext context) {
-//     void _showLogoutConfirmation(BuildContext context) {
-//       showDialog(
-//         context: context,
-//         builder: (context) {
-//           return AlertDialog(
-//             title: Text('Log Out'),
-//             content: Text('Are you sure you want to log out?'),
-//             actions: [
-//               TextButton(
-//                 onPressed: () => Navigator.of(context).pop(false),
-//                 child: Text('Cancel'),
-//               ),
-//               TextButton(
-//                 onPressed: () => Navigator.of(context).pop(true),
-//                 child: Text('Log Out'),
-//               ),
-//             ],
-//           );
-//         },
-//       ).then((value) {
-//         if (value == true) {
-//           Navigator.pushReplacement(
-//             context,
-//             MaterialPageRoute(builder: (context) => loginpage()),
-//           );
-//         }
-//       });
-//     }
-
-//     return MaterialApp(
-//       theme: _iconBool ? _darkTheme : _lightTheme,
-//       debugShowCheckedModeBanner: false,
-//       title: "STONK WATCH",
-//       home: Scaffold(
-//         drawer: Drawer(
-//           backgroundColor: Colors.blueGrey[900],
-//           child: Column(
-//             children: [
-//               Container(
-//                 height: 150,
-//                 decoration: BoxDecoration(
-//                   color: Colors.blueGrey[800],
-//                   borderRadius: BorderRadius.only(
-//                     bottomLeft: Radius.circular(20),
-//                     bottomRight: Radius.circular(20),
-//                   ),
-//                 ),
-//                 child: Center(
-//                   child: Text(
-//                     'Profile',
-//                     style: TextStyle(
-//                       fontSize: 30,
-//                       fontWeight: FontWeight.bold,
-//                       color: Colors.white,
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               SizedBox(height: 20),
-//               ListTile(
-//                 title: Text(
-//                   'My Profile',
-//                   style: TextStyle(
-//                     fontSize: 20,
-//                     color: Colors.white,
-//                   ),
-//                 ),
-//                 leading: Icon(
-//                   Icons.person,
-//                   color: Colors.white,
-//                 ),
-//                 onTap: () {
-//                   Navigator.of(context).push(
-//                     MaterialPageRoute(builder: (context) => myprofile()),
-//                   );
-//                 },
-//               ),
-//               ListTile(
-//                 title: Text(
-//                   'Settings',
-//                   style: TextStyle(
-//                     fontSize: 20,
-//                     color: Colors.white,
-//                   ),
-//                 ),
-//                 leading: Icon(
-//                   Icons.settings,
-//                   color: Colors.white,
-//                 ),
-//                 onTap: () {
-//                   Navigator.of(context).push(
-//                     MaterialPageRoute(builder: (
