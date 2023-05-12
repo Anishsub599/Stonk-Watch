@@ -56,7 +56,7 @@ class _CandleStickState extends State<CandleStick> {
       enablePanning: true, // Enable panning
     );
     _fetchChartData();
-    
+
     super.initState();
   }
 
@@ -196,13 +196,10 @@ class _CandleStickState extends State<CandleStick> {
                 zoomPanBehavior: _zoomPanBehavior, // Added ZoomPanBehavior
                 trackballBehavior: _trackballBehavior,
 
-                
                 series: _getChartSeries(),
-
 
                 primaryXAxis: DateTimeAxis(),
                 primaryYAxis: NumericAxis(),
-                series: _getChartSeries(),
               ),
             ),
           ],
