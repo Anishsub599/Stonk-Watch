@@ -4,6 +4,7 @@ import 'package:endproject/pages/Myprofile.dart';
 import 'package:endproject/pages/STOCKHistory.dart';
 import 'package:endproject/pages/Settings.dart';
 import 'package:endproject/pages/Stockcalculator.dart';
+import 'package:endproject/pages/floorsheet.dart';
 import 'package:endproject/pages/mynote.dart';
 import 'package:endproject/pages/watchlist.dart';
 import 'package:flutter/material.dart';
@@ -293,7 +294,7 @@ class _homepageState extends State<homepage> {
               ElevatedButton.icon(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => StockCalculator()));
+                      builder: (context) => Floorsheet(title: 'Floorsheet')));
                 },
                 icon: Icon(Icons.table_chart),
                 label: Text('Floorsheet'),

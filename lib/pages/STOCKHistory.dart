@@ -20,7 +20,6 @@ class STOCKHistoryState extends State<STOCKHistory> {
     'AMZN',
     'NVDA',
     'GOOGL',
-    'FB',
     'JPM',
     'JNJ',
     'V',

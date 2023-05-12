@@ -18,8 +18,8 @@ class CandleStick extends StatefulWidget {
 
 class _CandleStickState extends State<CandleStick> {
   late List<ChartSampleData> _chartData;
-  late ZoomPanBehavior _zoomPanBehavior;
   late TrackballBehavior _trackballBehavior;
+  late ZoomPanBehavior _zoomPanBehavior; // Added ZoomPanBehavior
   String _chartType = 'Candles';
   List<String> _stocks = [
     'AAPL',
@@ -51,26 +51,31 @@ class _CandleStickState extends State<CandleStick> {
     _chartData = [];
     _trackballBehavior = TrackballBehavior(
         enable: true, activationMode: ActivationMode.singleTap);
+    _zoomPanBehavior = ZoomPanBehavior(
+      enablePinching: true, // Enable pinch zooming
+      enablePanning: true, // Enable panning
+    );
     _fetchChartData();
-    _zoomPanBehavior = ZoomPanBehavior(enablePinching: true);
+    
     super.initState();
   }
 
   Future<void> _fetchChartData() async {
-    final apiKey = 'UP0DLOD0OWKTUT8D';
+    final apiKey = 'YOUR_API_KEY';
     final symbol = _selectedStock;
     final apiUrl =
-        'https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=$symbol&apikey=$apiKey';
+        'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=$symbol&apikey=$apiKey';
 
     try {
       final response = await http.get(Uri.parse(apiUrl));
       final jsonData = jsonDecode(response.body);
-      final weeklyData = jsonData['Weekly Time Series'];
+      final dailyData = jsonData['Time Series (Daily)'];
 
       List<ChartSampleData> data = [];
 
-      weeklyData.forEach((key, value) {
+      dailyData.forEach((key, value) {
         final date = DateFormat('yyyy-MM-dd').parse(key);
+
         final open = double.parse(value['1. open']);
         final high = double.parse(value['2. high']);
         final low = double.parse(value['3. low']);
@@ -188,11 +193,16 @@ class _CandleStickState extends State<CandleStick> {
             SizedBox(height: 16),
             Expanded(
               child: SfCartesianChart(
+                zoomPanBehavior: _zoomPanBehavior, // Added ZoomPanBehavior
                 trackballBehavior: _trackballBehavior,
-                zoomPanBehavior: _zoomPanBehavior,
+
+                
                 series: _getChartSeries(),
+
+
                 primaryXAxis: DateTimeAxis(),
                 primaryYAxis: NumericAxis(),
+                series: _getChartSeries(),
               ),
             ),
           ],
