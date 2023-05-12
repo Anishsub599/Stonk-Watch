@@ -23,13 +23,12 @@ class LandingPage extends StatelessWidget {
         children: [
           Container(
             height: 100,
-            width: 100,
+            width: double.infinity,
             decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: Color.fromARGB(255, 30, 31, 30)),
                 image: DecorationImage(
-                  image: AssetImage("assets/fonts/images/sharemarket.jpg"),
-                )),
+              image: AssetImage("assets/fonts/images/sharemarket.jpg"),
+              fit: BoxFit.fitWidth,
+            )),
           ),
           // Stack(
           //   // alignment: AlignmentDirectional.bottomStart,
@@ -85,11 +84,11 @@ class LandingPage extends StatelessWidget {
               height: 40.0,
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.amberAccent,
+                  backgroundColor: Color.fromARGB(255, 92, 232, 164),
                   foregroundColor: Colors.black,
                   padding: const EdgeInsets.all(10.0),
                   elevation: 12.0,
-                  shadowColor: Colors.amber,
+                  shadowColor: Color.fromARGB(255, 83, 219, 192),
                 ),
                 icon: const Icon(
                   Icons.arrow_back_ios,
@@ -121,7 +120,7 @@ class LandingPage extends StatelessWidget {
                 child: const Text(
                   'Sign in',
                   style: TextStyle(
-                    color: Colors.amber,
+                    color: Color.fromARGB(255, 87, 58, 192),
                     decoration: TextDecoration.underline,
                   ),
                 ),
