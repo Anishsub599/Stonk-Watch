@@ -431,7 +431,7 @@ class _loginpageState extends State<loginpage> {
       appBar: AppBar(
         elevation: 0,
         toolbarHeight: 45,
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 227, 219, 219),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
@@ -445,7 +445,7 @@ class _loginpageState extends State<loginpage> {
           },
         ),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 227, 219, 219),
       body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: SingleChildScrollView(
@@ -457,14 +457,15 @@ class _loginpageState extends State<loginpage> {
               const Text(
                 'Welcome back User!!!',
                 style: TextStyle(
+                  fontSize: 30,
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.bold,
-                  color: Colors.amber,
+                  color: Color.fromARGB(255, 92, 232, 164),
                 ),
               ),
               SizedBox(
                 height: 300,
-                width: 350,
+                width: double.infinity,
                 child:
                     Image(image: AssetImage("assets/fonts/images/stock.jpg")),
               ),
@@ -497,7 +498,7 @@ class _loginpageState extends State<loginpage> {
                             obscureText: true,
                             decoration: const InputDecoration(
                               suffixIcon: Material(
-                                color: Colors.transparent,
+                                color: Color.fromARGB(0, 88, 196, 158),
                               ),
                               labelText: 'password',
                               prefixIcon: Icon(Icons.password),
@@ -510,7 +511,7 @@ class _loginpageState extends State<loginpage> {
                             },
                           ),
                           SizedBox(
-                            height: 30,
+                            height: 15,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -530,40 +531,40 @@ class _loginpageState extends State<loginpage> {
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Container(
-                      width: double.infinity,
-                      child: RawMaterialButton(
-                        fillColor: Color.fromARGB(255, 69, 107, 232),
-                        elevation: 0.0,
-                        padding: EdgeInsets.symmetric(vertical: 20),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0)),
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            _formKey.currentState?.save();
-                            login();
-                          }
-                        },
-                        child: Text(
-                          "log in",
-                          selectionColor: Colors.black26,
-                        ),
-                      ),
-                    ),
+                    // SizedBox(
+                    //   height: ,
+                    // ),
+                    // Container(
+                    //   width: double.infinity,
+                    //   child: RawMaterialButton(
+                    //     fillColor: Color.fromARGB(255, 69, 107, 232),
+                    //     elevation: 0.0,
+                    //     padding: EdgeInsets.symmetric(vertical: 20),
+                    //     shape: RoundedRectangleBorder(
+                    //         borderRadius: BorderRadius.circular(12.0)),
+                    //     onPressed: () {
+                    //       if (_formKey.currentState!.validate()) {
+                    //         _formKey.currentState?.save();
+                    //         login();
+                    //       }
+                    //     },
+                    // child: Text(
+                    //   "log in",
+                    //   selectionColor: Colors.black26,
+                    // ),
+                    // ),
+                    // ),
                   ],
                 ),
               ),
-              SizedBox(
-                height: 15,
-              ),
+              // SizedBox(
+              //   height: 10,
+              // ),
               Container(
                 width: double.infinity,
                 child: RawMaterialButton(
                   textStyle: TextStyle(),
-                  fillColor: Color.fromARGB(255, 21, 21, 21),
+                  fillColor: Color.fromARGB(255, 66, 184, 162),
                   elevation: 0.0,
                   padding: EdgeInsets.symmetric(vertical: 20),
                   shape: RoundedRectangleBorder(
@@ -579,6 +580,9 @@ class _loginpageState extends State<loginpage> {
                     selectionColor: Colors.black26,
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 12,
               ),
               RichText(
                 text: TextSpan(

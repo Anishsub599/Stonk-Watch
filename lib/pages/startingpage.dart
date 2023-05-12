@@ -22,13 +22,16 @@ class LandingPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: 100,
+            height: 435,
             width: double.infinity,
             decoration: BoxDecoration(
                 image: DecorationImage(
               image: AssetImage("assets/fonts/images/sharemarket.jpg"),
               fit: BoxFit.fitWidth,
             )),
+          ),
+          SizedBox(
+            height: 10,
           ),
           // Stack(
           //   // alignment: AlignmentDirectional.bottomStart,
