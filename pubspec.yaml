@@ -67,9 +67,15 @@ flutter:
   assets:
     - assets/fonts/images/stonkpic.png
     - assets/fonts/images/sharemarket.jpg
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
 
   fonts:
     - family: kanit
       fonts:
         - asset: assets/fonts/kanit.ttf
-

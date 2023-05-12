@@ -56,6 +56,7 @@ class _CandleStickState extends State<CandleStick> {
       enablePanning: true, // Enable panning
     );
     _fetchChartData();
+    
     super.initState();
   }
 
@@ -150,6 +151,21 @@ class _CandleStickState extends State<CandleStick> {
                         MaterialStateProperty.all<Color>(Colors.black),
                   ),
                 ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {
+                      _chartType = 'HILO';
+                    });
+                  },
+                  icon: Icon(Icons.trending_up),
+                  label: Text('HILO'),
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.grey[200]!),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.black),
+                  ),
+                ),
               ],
             ),
             SizedBox(height: 16),
@@ -179,6 +195,11 @@ class _CandleStickState extends State<CandleStick> {
               child: SfCartesianChart(
                 zoomPanBehavior: _zoomPanBehavior, // Added ZoomPanBehavior
                 trackballBehavior: _trackballBehavior,
+
+                
+                series: _getChartSeries(),
+
+
                 primaryXAxis: DateTimeAxis(),
                 primaryYAxis: NumericAxis(),
                 series: _getChartSeries(),
@@ -199,9 +220,21 @@ class _CandleStickState extends State<CandleStick> {
           yValueMapper: (ChartSampleData data, _) => data.close,
         ),
       ];
-    } else {
+    }
+    if (_chartType == 'Line') {
       return <ChartSeries<ChartSampleData, DateTime>>[
         CandleSeries<ChartSampleData, DateTime>(
+          dataSource: _chartData,
+          xValueMapper: (ChartSampleData data, _) => data.x,
+          lowValueMapper: (ChartSampleData data, _) => data.low,
+          highValueMapper: (ChartSampleData data, _) => data.high,
+          openValueMapper: (ChartSampleData data, _) => data.open,
+          closeValueMapper: (ChartSampleData data, _) => data.close,
+        ),
+      ];
+    } else {
+      return <ChartSeries<ChartSampleData, DateTime>>[
+        HiloOpenCloseSeries<ChartSampleData, DateTime>(
           dataSource: _chartData,
           xValueMapper: (ChartSampleData data, _) => data.x,
           lowValueMapper: (ChartSampleData data, _) => data.low,
