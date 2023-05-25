@@ -158,6 +158,7 @@ import 'package:endproject/pages/changepass.dart';
 import 'package:endproject/pages/privacy.dart';
 import 'package:endproject/pages/social.dart';
 import 'package:endproject/pages/sound.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 
@@ -165,11 +166,11 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Color(0xFF40535B),
       appBar: AppBar(
         elevation: 0,
         centerTitle: false,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color(0xFF3A526E),
         title: Text(
           "Settings",
           style: TextStyle(
@@ -179,174 +180,111 @@ class SettingsPage extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 16),
+              Text(
+                "General",
+                style: TextStyle(color: Colors.white, fontSize: 30),
+              ),
+              SizedBox(height: 16),
+              buildSettingItem(
+                context,
+                text: 'Change password',
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ChangePasswordScreen(),
+                    ),
+                  );
+                },
+              ),
+              buildSettingItem(
+                context,
+                text: 'Sound setting',
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SoundSettingsPage(),
+                    ),
+                  );
+                },
+              ),
+              buildSettingItem(
+                context,
+                text: 'Social',
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SocialPage(),
+                    ),
+                  );
+                },
+              ),
+              buildSettingItem(
+                context,
+                text: 'Privacy and security',
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PrivacySecurityPage(),
+                    ),
+                  );
+                },
+              ),
+              buildSettingItem(
+                context,
+                text: 'Notifications',
+                onPressed: () {},
+              ),
+              buildSettingItem(
+                context,
+                text: 'Language setting',
+                onPressed: () {},
+              ),
+              SizedBox(height: 16),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildSettingItem(BuildContext context,
+      {required String text, VoidCallback? onPressed}) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 8),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.white),
+        borderRadius: BorderRadius.circular(30),
+        color: Color(0xFF576B7C),
+      ),
+      child: TextButton(
+        style: TextButton.styleFrom(
+          padding: const EdgeInsets.all(16.0),
+          textStyle: const TextStyle(fontSize: 20),
+        ),
+        onPressed: onPressed,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              children: [
-                Container(
-                  height: 57,
-                  padding: EdgeInsets.only(left: 18),
-                  width: 200,
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "General",
-                    style: TextStyle(color: Colors.white, fontSize: 30),
-                  ),
-                  decoration: BoxDecoration(
-                      // border: Border.all(color: Colors.white)
-                      ),
-                ),
-                SizedBox(
-                  width: 200,
-                )
-              ],
-            ),
-            Container(
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  foregroundColor: Color.fromARGB(255, 105, 82, 210),
-                  padding: const EdgeInsets.all(16.0),
-                  textStyle: const TextStyle(fontSize: 20),
-                ),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ChangePasswordScreen(),
-                      ));
-                },
-                child: const Text('Change password'),
+            Text(
+              text,
+              style: TextStyle(
+                color: Color(0xFFC4E1E8),
+                fontWeight: FontWeight.bold,
               ),
-              margin: EdgeInsets.only(top: 5, bottom: 5),
-              padding:
-                  EdgeInsetsDirectional.symmetric(vertical: 2, horizontal: 8),
-              height: 60,
-              alignment: Alignment.center,
-              width: 600,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(30)),
             ),
-            Container(
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  foregroundColor: Color.fromARGB(255, 105, 82, 210),
-                  padding: const EdgeInsets.all(16.0),
-                  textStyle: const TextStyle(fontSize: 20),
-                ),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SoundSettingsPage(),
-                      ));
-                },
-                child: const Text('Sound setting'),
-              ),
-              margin: EdgeInsets.only(top: 5, bottom: 5),
-              padding:
-                  EdgeInsetsDirectional.symmetric(vertical: 2, horizontal: 8),
-              height: 60,
-              alignment: Alignment.center,
-              width: 600,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(30)),
-            ),
-            Container(
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  foregroundColor: Color.fromARGB(255, 105, 82, 210),
-                  padding: const EdgeInsets.all(16.0),
-                  textStyle: const TextStyle(fontSize: 20),
-                ),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SocialPage(),
-                      ));
-                },
-                child: const Text('Social'),
-              ),
-              margin: EdgeInsets.only(top: 5, bottom: 5),
-              padding:
-                  EdgeInsetsDirectional.symmetric(vertical: 2, horizontal: 8),
-              height: 60,
-              alignment: Alignment.center,
-              width: 600,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(30)),
-            ),
-            Container(
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  foregroundColor: Color.fromARGB(255, 105, 82, 210),
-                  padding: const EdgeInsets.all(16.0),
-                  textStyle: const TextStyle(fontSize: 20),
-                ),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PrivacySecurityPage(),
-                      ));
-                },
-                child: const Text('Privacy and security'),
-              ),
-              margin: EdgeInsets.only(top: 5, bottom: 5),
-              padding:
-                  EdgeInsetsDirectional.symmetric(vertical: 2, horizontal: 8),
-              height: 60,
-              alignment: Alignment.center,
-              width: 600,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(30)),
-            ),
-            Container(
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  foregroundColor: Color.fromARGB(255, 105, 82, 210),
-                  padding: const EdgeInsets.all(16.0),
-                  textStyle: const TextStyle(fontSize: 20),
-                ),
-                onPressed: () {},
-                child: const Text('Notifications'),
-              ),
-              margin: EdgeInsets.only(top: 5, bottom: 5),
-              padding:
-                  EdgeInsetsDirectional.symmetric(vertical: 2, horizontal: 8),
-              height: 60,
-              alignment: Alignment.center,
-              width: 600,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(30)),
-            ),
-            Container(
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  foregroundColor: Color.fromARGB(255, 105, 82, 210),
-                  padding: const EdgeInsets.all(16.0),
-                  textStyle: const TextStyle(fontSize: 20),
-                ),
-                onPressed: () {},
-                child: const Text('Language setting'),
-              ),
-              margin: EdgeInsets.only(top: 5, bottom: 5),
-              padding:
-                  EdgeInsetsDirectional.symmetric(vertical: 2, horizontal: 8),
-              height: 60,
-              alignment: Alignment.center,
-              width: 600,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(30)),
-            ),
-            SizedBox(
-              height: 19,
+            Icon(
+              CupertinoIcons.right_chevron,
+              color: Color(0xFFC4E1E8),
             ),
           ],
         ),
