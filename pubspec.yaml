@@ -75,5 +75,11 @@ flutter:
 
   fonts:
     - family: kanit
+
       fonts:
         - asset: assets/fonts/kanit.ttf
+
+    - family: Rubik Puddles
+
+      fonts:
+        - asset: assets/fonts/RubikPuddles-Regular.ttf

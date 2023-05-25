@@ -522,7 +522,7 @@ class _loginpageState extends State<loginpage> {
                                     Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => signup(),
+                                          builder: (context) => SignupPage(),
                                         ));
                                   },
                                   child: Text('Sign up'))

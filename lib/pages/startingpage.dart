@@ -99,7 +99,7 @@ class LandingPage extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => signup()));
+                      MaterialPageRoute(builder: (context) => SignupPage()));
                 },
                 label: const Text(
                   "Get Started",
