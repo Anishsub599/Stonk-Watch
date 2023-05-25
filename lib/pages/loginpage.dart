@@ -457,6 +457,7 @@ class _loginpageState extends State<loginpage> {
               const Text(
                 'Welcome back User!!!',
                 style: TextStyle(
+                  fontFamily: 'Rubik Puddles',
                   fontSize: 30,
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.bold,
@@ -525,7 +526,9 @@ class _loginpageState extends State<loginpage> {
                                           builder: (context) => SignupPage(),
                                         ));
                                   },
-                                  child: Text('Sign up'))
+                                  child: Text(
+                                    'Sign up',
+                                  ))
                             ],
                           )
                         ],

@@ -23,14 +23,14 @@ class _myprofileState extends State<myprofile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple[300],
+        backgroundColor: Color.fromARGB(255, 117, 203, 189),
         leadingWidth: 25,
         elevation: 0,
         actions: [
           Icon(Icons.person),
         ],
         title: Text(
-          'P R O F I L E',
+          'PROFILE',
           style: TextStyle(
               fontSize: 24,
               color: Color.fromARGB(255, 247, 245, 245),
