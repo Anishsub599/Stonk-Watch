@@ -71,302 +71,503 @@ class _homepageState extends State<homepage> {
     }
 
     return MaterialApp(
-      theme: _iconBool ? _darkTheme : _LightTheme,
-      debugShowCheckedModeBanner: false,
-      title: "STONK WATCH",
-      home: Scaffold(
-        drawer: Drawer(
-          backgroundColor: Colors.blueGrey[900],
-          child: Column(
-            children: [
-              Container(
-                height: 150,
-                decoration: BoxDecoration(
-                  color: Colors.blueGrey[800],
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(20),
-                    bottomRight: Radius.circular(20),
+        theme: _iconBool ? _darkTheme : _LightTheme,
+        debugShowCheckedModeBanner: false,
+        title: "STONK WATCH",
+        home: Scaffold(
+          drawer: Drawer(
+            backgroundColor: Colors.blueGrey[900],
+            child: Column(
+              children: [
+                Container(
+                  height: 150,
+                  decoration: BoxDecoration(
+                    color: Colors.blueGrey[800],
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20),
+                    ),
                   ),
-                ),
-                child: Center(
-                  child: Text(
-                    'Profile',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                  child: Center(
+                    child: Text(
+                      'Profile',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(height: 20),
-              ListTile(
-                title: Text(
-                  'My Profile',
-                  style: TextStyle(
-                    fontSize: 20,
+                SizedBox(height: 20),
+                ListTile(
+                  title: Text(
+                    'My Profile',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
+                  leading: Icon(
+                    Icons.person,
                     color: Colors.white,
                   ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => myprofile()),
+                    );
+                  },
                 ),
-                leading: Icon(
-                  Icons.person,
+                ListTile(
+                  title: Text(
+                    'Settings',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
+                  leading: Icon(
+                    Icons.settings,
+                    color: Colors.white,
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => SettingsPage()),
+                    );
+                  },
+                ),
+                ListTile(
+                  title: Text(
+                    'About Us',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
+                  leading: Icon(
+                    Icons.info_outline,
+                    color: Colors.white,
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => AboutUs()),
+                    );
+                  },
+                ),
+                Divider(
                   color: Colors.white,
+                  height: 20,
+                  thickness: 2,
+                  indent: 20,
+                  endIndent: 20,
                 ),
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => myprofile()),
-                  );
+                ListTile(
+                  title: Text(
+                    'Log out',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
+                  leading: Icon(
+                    Icons.exit_to_app,
+                    color: Colors.white,
+                  ),
+                  onTap: () => _showLogoutConfirmation(context),
+                ),
+              ],
+            ),
+          ),
+          appBar: AppBar(
+            backgroundColor: Color.fromARGB(255, 61, 201, 161),
+            title: Text('STONKWATCH'),
+            actions: [
+              IconButton(
+                onPressed: () {
+                  setState(() {
+                    _iconBool = !_iconBool;
+                  });
                 },
-              ),
-              ListTile(
-                title: Text(
-                  'Settings',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
-                ),
-                leading: Icon(
-                  Icons.settings,
-                  color: Colors.white,
-                ),
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => SettingsPage()),
-                  );
-                },
-              ),
-              ListTile(
-                title: Text(
-                  'About Us',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
-                ),
-                leading: Icon(
-                  Icons.info_outline,
-                  color: Colors.white,
-                ),
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => AboutUs()),
-                  );
-                },
-              ),
-              Divider(
-                color: Colors.white,
-                height: 20,
-                thickness: 2,
-                indent: 20,
-                endIndent: 20,
-              ),
-              ListTile(
-                title: Text(
-                  'Log out',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
-                ),
-                leading: Icon(
-                  Icons.exit_to_app,
-                  color: Colors.white,
-                ),
-                onTap: () => _showLogoutConfirmation(context),
+                icon: Icon(_iconBool ? _iconDark : _iconLight),
               ),
             ],
           ),
-        ),
-        appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 61, 201, 161),
-          title: Text('STONKWATCH'),
-          actions: [
-            IconButton(
-              onPressed: () {
-                setState(() {
-                  _iconBool = !_iconBool;
-                });
-              },
-              icon: Icon(_iconBool ? _iconDark : _iconLight),
-            ),
-          ],
-        ),
-        bottomNavigationBar: GNav(
-          backgroundColor: Color.fromARGB(255, 15, 15, 16),
-          color: Color.fromARGB(255, 243, 240, 241),
-          activeColor: Colors.white,
-          tabBackgroundColor: Colors.grey.shade800,
-          gap: 8,
-          padding: EdgeInsets.all(16),
-          tabs: [
-            GButton(
-              icon: Icons.home,
-              text: 'Home',
-            ),
-            GButton(
-              icon: Icons.list,
-              text: 'List',
-            ),
-            GButton(
-              icon: Icons.search,
-              text: 'Search',
-            ),
-            GButton(
-              icon: Icons.settings,
-              text: 'setting',
-            ),
-          ],
-        ),
-        body: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: ListView(
-            children: [
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) =>
-                          CandleStick(title: 'My Candlestick Chart')));
-                },
-                icon: Icon(Icons.auto_graph),
-                label: Text('StockChart'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
-                  onPrimary: Colors.white,
-                  padding: EdgeInsets.all(12.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
+          bottomNavigationBar: GNav(
+            backgroundColor: Color.fromARGB(255, 15, 15, 16),
+            color: Color.fromARGB(255, 243, 240, 241),
+            activeColor: Colors.white,
+            tabBackgroundColor: Colors.grey.shade800,
+            gap: 8,
+            padding: EdgeInsets.all(16),
+            tabs: [
+              GButton(
+                icon: Icons.home,
+                text: 'Home',
               ),
-              SizedBox(height: 16.0),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => StockCalculator()));
-                },
-                icon: Icon(Icons.calculate),
-                label: Text('Stock Calculator'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue, // background color
-                  onPrimary: Colors.white, // text color
-                  padding: EdgeInsets.all(12.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
+              GButton(
+                icon: Icons.list,
+                text: 'List',
               ),
-              SizedBox(height: 16.0),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => WatchlistScreen()));
-                },
-                icon: Icon(Icons.watch),
-                label: Text('WatchList'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
-                  onPrimary: Colors.white,
-                  padding: EdgeInsets.all(12.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
+              GButton(
+                icon: Icons.search,
+                text: 'Search',
               ),
-              SizedBox(height: 16.0),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => StockCalculator()));
-                },
-                icon: Icon(Icons.alarm),
-                label: Text('Alerts'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
-                  onPrimary: Colors.white,
-                  padding: EdgeInsets.all(12.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-              ),
-              SizedBox(height: 16.0),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => Floorsheet(title: 'Floorsheet')));
-                },
-                icon: Icon(Icons.table_chart),
-                label: Text('Floorsheet'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
-                  onPrimary: Colors.white,
-                  padding: EdgeInsets.all(12.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-              ),
-              SizedBox(height: 16.0),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => AllScrip(
-                            title: 'All Scrip',
-                          )));
-                },
-                icon: Icon(Icons.list),
-                label: Text('All Scrips'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
-                  onPrimary: Colors.white,
-                  padding: EdgeInsets.all(12.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-              ),
-              SizedBox(height: 16.0),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => STOCKHistory()));
-                },
-                icon: Icon(Icons.history),
-                label: Text('STOCK History'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
-                  onPrimary: Colors.white,
-                  padding: EdgeInsets.all(12.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-              ),
-              SizedBox(height: 16.0),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => NotePage()));
-                },
-                icon: Icon(Icons.notes_outlined),
-                label: Text('My notes'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
-                  onPrimary: Colors.white,
-                  padding: EdgeInsets.all(12.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
+              GButton(
+                icon: Icons.settings,
+                text: 'setting',
               ),
             ],
           ),
-        ),
-      ),
-    );
+          body: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: ListView(
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                CandleStick(title: 'My Candlestick Chart'),
+                          ));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue,
+                          onPrimary: Colors.white,
+                          padding: EdgeInsets.all(12.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.blue.shade200,
+                                shape: BoxShape.circle,
+                              ),
+                              padding: EdgeInsets.all(10.0),
+                              child: Icon(
+                                Icons.auto_graph,
+                                size: 40.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              'StockChart',
+                              style: TextStyle(fontSize: 18.0),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 16.0),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => StockCalculator(),
+                          ));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue,
+                          onPrimary: Colors.white,
+                          padding: EdgeInsets.all(12.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.blue.shade200,
+                                shape: BoxShape.circle,
+                              ),
+                              padding: EdgeInsets.all(10.0),
+                              child: Icon(
+                                Icons.calculate,
+                                size: 40.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              'Stock Calculator',
+                              style: TextStyle(fontSize: 18.0),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 16.0),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => WatchlistScreen(),
+                          ));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue,
+                          onPrimary: Colors.white,
+                          padding: EdgeInsets.all(12.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.blue.shade200,
+                                shape: BoxShape.circle,
+                              ),
+                              padding: EdgeInsets.all(10.0),
+                              child: Icon(
+                                Icons.watch,
+                                size: 40.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              'WatchList',
+                              style: TextStyle(fontSize: 18.0),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 16.0),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => StockCalculator(),
+                          ));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue,
+                          onPrimary: Colors.white,
+                          padding: EdgeInsets.all(12.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.blue.shade200,
+                                shape: BoxShape.circle,
+                              ),
+                              padding: EdgeInsets.all(10.0),
+                              child: Icon(
+                                Icons.alarm,
+                                size: 40.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              'Alerts',
+                              style: TextStyle(fontSize: 18.0),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 16.0),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                Floorsheet(title: 'Floorsheet'),
+                          ));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue,
+                          onPrimary: Colors.white,
+                          padding: EdgeInsets.all(12.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.blue.shade200,
+                                shape: BoxShape.circle,
+                              ),
+                              padding: EdgeInsets.all(10.0),
+                              child: Icon(
+                                Icons.table_chart,
+                                size: 40.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              'Floorsheet',
+                              style: TextStyle(fontSize: 18.0),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 16.0),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => AllScrip(
+                              title: 'All Scrip',
+                            ),
+                          ));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue,
+                          onPrimary: Colors.white,
+                          padding: EdgeInsets.all(12.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.blue.shade200,
+                                shape: BoxShape.circle,
+                              ),
+                              padding: EdgeInsets.all(10.0),
+                              child: Icon(
+                                Icons.list,
+                                size: 40.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              'All Scrips',
+                              style: TextStyle(fontSize: 18.0),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 16.0),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => STOCKHistory(),
+                          ));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue,
+                          onPrimary: Colors.white,
+                          padding: EdgeInsets.all(12.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.blue.shade200,
+                                shape: BoxShape.circle,
+                              ),
+                              padding: EdgeInsets.all(10.0),
+                              child: Icon(
+                                Icons.history,
+                                size: 40.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              'STOCK History',
+                              style: TextStyle(fontSize: 18.0),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 16.0),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => NotePage(),
+                          ));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.blue,
+                          onPrimary: Colors.white,
+                          padding: EdgeInsets.all(12.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.blue.shade200,
+                                shape: BoxShape.circle,
+                              ),
+                              padding: EdgeInsets.all(10.0),
+                              child: Icon(
+                                Icons.notes_outlined,
+                                size: 40.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Text(
+                              'My notes',
+                              style: TextStyle(fontSize: 18.0),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
+
 // import 'package:endproject/pages/Aboutus.dart';
 // import 'package:endproject/pages/Myprofile.dart';
 // import 'package:endproject/pages/Settings.dart';
