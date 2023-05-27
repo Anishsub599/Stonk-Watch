@@ -82,7 +82,7 @@ class _splashScreenState extends State<splashScreen> {
                       border:
                           Border.all(color: Color.fromARGB(255, 18, 184, 40)),
                       image: DecorationImage(
-                          image: AssetImage("assets/fonts/images/stonkpic.png"),
+                          image: AssetImage("assets/fonts/images/logo.png"),
                           fit: BoxFit.fill)),
                 ),
 
@@ -97,7 +97,7 @@ class _splashScreenState extends State<splashScreen> {
                     "Stonk Watch",
                     style: TextStyle(
                         fontSize: 30,
-                        color: Color.fromARGB(255, 117, 205, 121),
+                        color: Color.fromARGB(255, 141, 231, 223),
                         fontFamily: "kanit"),
                   ),
                 ),

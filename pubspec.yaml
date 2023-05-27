@@ -65,6 +65,8 @@ flutter:
     - assets/fonts/images/stonkpic.png
     - assets/fonts/images/sharemarket.jpg
     - assets/fonts/images/stock.jpg
+    - assets/fonts/images/logo.png
+
   #
 
   # An image asset can refer to one or more resolution-specific "variants", see

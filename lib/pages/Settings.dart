@@ -155,6 +155,7 @@
 // }
 
 import 'package:endproject/pages/changepass.dart';
+import 'package:endproject/pages/notification.dart';
 import 'package:endproject/pages/privacy.dart';
 import 'package:endproject/pages/social.dart';
 import 'package:endproject/pages/sound.dart';
@@ -205,18 +206,6 @@ class SettingsPage extends StatelessWidget {
               ),
               buildSettingItem(
                 context,
-                text: 'Sound setting',
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SoundSettingsPage(),
-                    ),
-                  );
-                },
-              ),
-              buildSettingItem(
-                context,
                 text: 'Social',
                 onPressed: () {
                   Navigator.pushReplacement(
@@ -242,7 +231,14 @@ class SettingsPage extends StatelessWidget {
               buildSettingItem(
                 context,
                 text: 'Notifications',
-                onPressed: () {},
+                onPressed: () {
+                  // Navigator.pushReplacement(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => NotificationPage(),
+                  //   ),
+                  // );
+                },
               ),
               buildSettingItem(
                 context,
