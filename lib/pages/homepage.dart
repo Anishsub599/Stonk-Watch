@@ -179,7 +179,7 @@ class _homepageState extends State<homepage> {
             ),
           ),
           appBar: AppBar(
-            backgroundColor: Color.fromARGB(255, 61, 201, 161),
+            backgroundColor: Color.fromARGB(255, 82, 232, 82),
             title: Text('STONKWATCH'),
             actions: [
               IconButton(
