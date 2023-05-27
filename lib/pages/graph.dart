@@ -218,7 +218,7 @@ class _CandleStickState extends State<CandleStick> {
         ),
       ];
     }
-    if (_chartType == 'Line') {
+    if (_chartType == 'Candles') {
       return <ChartSeries<ChartSampleData, DateTime>>[
         CandleSeries<ChartSampleData, DateTime>(
           dataSource: _chartData,
