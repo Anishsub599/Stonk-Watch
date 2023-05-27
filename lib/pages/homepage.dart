@@ -233,7 +233,7 @@ class _homepageState extends State<homepage> {
                           ));
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
+                          primary: Color.fromARGB(255, 55, 186, 81),
                           onPrimary: Colors.white,
                           padding: EdgeInsets.all(12.0),
                           shape: RoundedRectangleBorder(
@@ -245,7 +245,7 @@ class _homepageState extends State<homepage> {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Colors.blue.shade200,
+                                color: Color.fromARGB(255, 76, 212, 97),
                                 shape: BoxShape.circle,
                               ),
                               padding: EdgeInsets.all(10.0),
@@ -273,7 +273,7 @@ class _homepageState extends State<homepage> {
                           ));
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
+                          primary: Color.fromARGB(255, 55, 186, 81),
                           onPrimary: Colors.white,
                           padding: EdgeInsets.all(12.0),
                           shape: RoundedRectangleBorder(
@@ -285,7 +285,7 @@ class _homepageState extends State<homepage> {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Colors.blue.shade200,
+                                color: Color.fromARGB(255, 76, 212, 97),
                                 shape: BoxShape.circle,
                               ),
                               padding: EdgeInsets.all(10.0),
@@ -317,7 +317,7 @@ class _homepageState extends State<homepage> {
                           ));
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
+                          primary: Color.fromARGB(255, 55, 186, 81),
                           onPrimary: Colors.white,
                           padding: EdgeInsets.all(12.0),
                           shape: RoundedRectangleBorder(
@@ -329,7 +329,7 @@ class _homepageState extends State<homepage> {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Colors.blue.shade200,
+                                color: Color.fromARGB(255, 76, 212, 97),
                                 shape: BoxShape.circle,
                               ),
                               padding: EdgeInsets.all(10.0),
@@ -357,7 +357,7 @@ class _homepageState extends State<homepage> {
                           ));
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
+                          primary: Color.fromARGB(255, 55, 186, 81),
                           onPrimary: Colors.white,
                           padding: EdgeInsets.all(12.0),
                           shape: RoundedRectangleBorder(
@@ -369,7 +369,7 @@ class _homepageState extends State<homepage> {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Colors.blue.shade200,
+                                color: Color.fromARGB(255, 76, 212, 97),
                                 shape: BoxShape.circle,
                               ),
                               padding: EdgeInsets.all(10.0),
@@ -402,7 +402,7 @@ class _homepageState extends State<homepage> {
                           ));
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
+                          primary: Color.fromARGB(255, 55, 186, 81),
                           onPrimary: Colors.white,
                           padding: EdgeInsets.all(12.0),
                           shape: RoundedRectangleBorder(
@@ -414,7 +414,7 @@ class _homepageState extends State<homepage> {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Colors.blue.shade200,
+                                color: Color.fromARGB(255, 76, 212, 97),
                                 shape: BoxShape.circle,
                               ),
                               padding: EdgeInsets.all(10.0),
@@ -444,7 +444,7 @@ class _homepageState extends State<homepage> {
                           ));
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
+                          primary: Color.fromARGB(255, 55, 186, 81),
                           onPrimary: Colors.white,
                           padding: EdgeInsets.all(12.0),
                           shape: RoundedRectangleBorder(
@@ -456,7 +456,7 @@ class _homepageState extends State<homepage> {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Colors.blue.shade200,
+                                color: Color.fromARGB(255, 76, 212, 97),
                                 shape: BoxShape.circle,
                               ),
                               padding: EdgeInsets.all(10.0),
@@ -488,7 +488,7 @@ class _homepageState extends State<homepage> {
                           ));
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
+                          primary: Color.fromARGB(255, 55, 186, 81),
                           onPrimary: Colors.white,
                           padding: EdgeInsets.all(12.0),
                           shape: RoundedRectangleBorder(
@@ -500,7 +500,7 @@ class _homepageState extends State<homepage> {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Colors.blue.shade200,
+                                color: Color.fromARGB(255, 76, 212, 97),
                                 shape: BoxShape.circle,
                               ),
                               padding: EdgeInsets.all(10.0),
@@ -528,7 +528,7 @@ class _homepageState extends State<homepage> {
                           ));
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
+                          primary: Color.fromARGB(255, 55, 186, 81),
                           onPrimary: Colors.white,
                           padding: EdgeInsets.all(12.0),
                           shape: RoundedRectangleBorder(
@@ -540,7 +540,7 @@ class _homepageState extends State<homepage> {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Colors.blue.shade200,
+                                color: Color.fromARGB(255, 76, 212, 97),
                                 shape: BoxShape.circle,
                               ),
                               padding: EdgeInsets.all(10.0),
