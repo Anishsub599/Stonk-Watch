@@ -1,3 +1,4 @@
+import 'package:endproject/pages/social.dart';
 import 'package:flutter/material.dart';
 
 class AboutUs extends StatelessWidget {
@@ -55,7 +56,9 @@ class AboutUs extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  // Contact button functionality
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => SocialPage(),
+                  ));
                 },
                 child: Text(
                   'Contact Us',
