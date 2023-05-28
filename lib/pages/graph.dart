@@ -112,6 +112,7 @@ class _CandleStickState extends State<CandleStick> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 134, 234, 194),
           centerTitle: true,
           title: const Text("Stock Chart"),
         ),

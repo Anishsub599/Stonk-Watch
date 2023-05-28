@@ -26,6 +26,7 @@ class _WatchlistScreenState extends State<WatchlistScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 134, 234, 194),
         centerTitle: true,
         title: Text('Watchlist'),
       ),
@@ -83,6 +84,7 @@ class _WatchlistScreenState extends State<WatchlistScreen> {
             builder: (BuildContext context) {
               TextEditingController nameController = TextEditingController();
               TextEditingController priceController = TextEditingController();
+              TextEditingController percentagechange = TextEditingController();
 
               return AlertDialog(
                 title: Text('Add Stock'),
@@ -96,6 +98,12 @@ class _WatchlistScreenState extends State<WatchlistScreen> {
                     TextField(
                       controller: priceController,
                       decoration: InputDecoration(hintText: 'Stock Price'),
+                      keyboardType: TextInputType.number,
+                    ),
+                    TextField(
+                      controller: percentagechange,
+                      decoration:
+                          InputDecoration(hintText: 'Percentage Change'),
                       keyboardType: TextInputType.number,
                     ),
                   ],
@@ -115,7 +123,7 @@ class _WatchlistScreenState extends State<WatchlistScreen> {
                           Stock(
                             name: nameController.text,
                             price: double.parse(priceController.text),
-                            change: 0.0,
+                            change: double.parse(percentagechange.text),
                           ),
                         );
                       });

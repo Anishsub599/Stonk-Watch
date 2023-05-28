@@ -102,7 +102,20 @@ class _StockCalculatorState extends State<StockCalculator> {
       home: DefaultTabController(
         length: 4,
         child: Scaffold(
+          // appBar: AppBar(
+          //   backgroundColor: Color.fromARGB(255, 134, 234, 194),
+          //   bottom: const TabBar(
+          //     tabs: [
+          //       Tab(icon: Text('Buying')),
+          //       Tab(icon: Text('Selling')),
+          //       Tab(icon: Text('Right Share Adjustment')),
+          //       Tab(icon: Text('Bonus Share Adjustment')),
+          //     ],
+          //   ),
+          //   title: const Text('Stock Calculator'),
+          // ),
           appBar: AppBar(
+            backgroundColor: Color.fromARGB(255, 134, 234, 194),
             bottom: const TabBar(
               tabs: [
                 Tab(icon: Text('Buying')),
@@ -111,8 +124,10 @@ class _StockCalculatorState extends State<StockCalculator> {
                 Tab(icon: Text('Bonus Share Adjustment')),
               ],
             ),
-            title: const Text('Stock Calculator'),
+            centerTitle: true,
+            title: const Text("Stock Calculator"),
           ),
+
           body: TabBarView(
             children: [
               //tab1

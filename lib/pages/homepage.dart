@@ -179,7 +179,7 @@ class _homepageState extends State<homepage> {
             ),
           ),
           appBar: AppBar(
-            backgroundColor: Color.fromARGB(255, 82, 232, 82),
+            backgroundColor: Color.fromARGB(255, 134, 234, 194),
             title: Text('STONKWATCH'),
             actions: [
               IconButton(
@@ -189,32 +189,6 @@ class _homepageState extends State<homepage> {
                   });
                 },
                 icon: Icon(_iconBool ? _iconDark : _iconLight),
-              ),
-            ],
-          ),
-          bottomNavigationBar: GNav(
-            backgroundColor: Color.fromARGB(255, 15, 15, 16),
-            color: Color.fromARGB(255, 243, 240, 241),
-            activeColor: Colors.white,
-            tabBackgroundColor: Colors.grey.shade800,
-            gap: 8,
-            padding: EdgeInsets.all(16),
-            tabs: [
-              GButton(
-                icon: Icons.home,
-                text: 'Home',
-              ),
-              GButton(
-                icon: Icons.list,
-                text: 'List',
-              ),
-              GButton(
-                icon: Icons.search,
-                text: 'Search',
-              ),
-              GButton(
-                icon: Icons.settings,
-                text: 'setting',
               ),
             ],
           ),
@@ -352,9 +326,9 @@ class _homepageState extends State<homepage> {
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => StockCalculator(),
-                          ));
+                          // Navigator.of(context).push(MaterialPageRoute(
+                          //   builder: (context) => StockNewsPage(),
+                          // ));
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Color.fromARGB(255, 55, 186, 81),

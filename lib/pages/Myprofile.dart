@@ -77,7 +77,7 @@ class _myprofileState extends State<myprofile> {
   FirebaseAuth _auth = FirebaseAuth.instance;
 
   String userEmail = FirebaseAuth.instance.currentUser!.email!;
-  String userName = 'KUSHAL'; // replace with the user's actual name
+  String userName = 'GAURAV'; // replace with the user's actual name
   String userImage =
       'https://www.facebook.com/photo/?fbid=131427044278998&set=pob.100022351083424'; // replace with the URL of the user's profile picture
 
@@ -85,7 +85,7 @@ class _myprofileState extends State<myprofile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 135, 222, 207),
+        backgroundColor: Color.fromARGB(255, 134, 234, 194),
         leadingWidth: 25,
         elevation: 0,
         title: Text(

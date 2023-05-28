@@ -29,6 +29,7 @@ class _AllScripState extends State<AllScrip> {
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 134, 234, 194),
           centerTitle: true,
           title: const Text("All Scrips"),
         ),

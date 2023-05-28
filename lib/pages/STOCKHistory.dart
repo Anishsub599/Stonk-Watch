@@ -89,6 +89,7 @@ class STOCKHistoryState extends State<STOCKHistory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 134, 234, 194),
         title: Text('STOCK History'),
       ),
       body: Column(

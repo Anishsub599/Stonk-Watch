@@ -85,6 +85,7 @@ class FloorsheetState extends State<Floorsheet> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 134, 234, 194),
           centerTitle: true,
           title: Text(
             widget.title,
@@ -94,7 +95,6 @@ class FloorsheetState extends State<Floorsheet> {
               color: Colors.white,
             ),
           ),
-          backgroundColor: Colors.blue,
         ),
         body: Container(
           padding: EdgeInsets.all(16.0),
